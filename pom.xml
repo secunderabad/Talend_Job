@@ -5,7 +5,7 @@
   <groupId>org.talend</groupId>
   <artifactId>sampleTalendProject</artifactId>
   <version>0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
   
   <properties>
     <talend.project.name>sampleTalendProject</talend.project.name>
