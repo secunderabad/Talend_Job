@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.talend</groupId>
+  <artifactId>sampleTalendProject</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <properties>
+    <talend.project.name>sampleTalendProject</talend.project.name>
+    <encoding>UTF-8</encoding>
+    <talend.version>7.1.1</talend.version>
+  </properties>
+<distributionManagement>
+
+
+  <!-- use the following if you ARE using a snapshot version. -->
+  <snapshotRepository>
+    <id>deployment</id>
+    <name>Sample_talend</name>
+    <url>http://localhost:8081/repository/Sample_talend/</url>
+  </snapshotRepository>
+</distributionManagement>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+   <groupId>org.sonatype.plugins</groupId>
+   <artifactId>nexus-staging-maven-plugin</artifactId>
+   <version>1.5.1</version>
+   <executions>
+      <execution>
+         <id>default-deploy</id>
+         <phase>deploy</phase>
+         <goals>
+            <goal>deploy</goal>
+         </goals>
+      </execution>
+   </executions>
+   <configuration>
+      <serverId>nexus</serverId>
+      <nexusUrl>http://localhost:8081/nexus/</nexusUrl>
+      <skipStaging>true</skipStaging>
+   </configuration>
+</plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  
+
+</project>
